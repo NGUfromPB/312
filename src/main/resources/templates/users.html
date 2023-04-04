@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta  charset="UTF-8">
+    <title>Человеки</title>
+</head>
+<body>
+
+<div th:each="users : ${users}">
+    <a th:href="@{'/admin/' + ${users.userId}}" th:text="${users.username}">user</a>
+
+</div>
+<br/>
+<hr/>
+<a href="/admin/new">create</a>
+<br/>
+<button class="buttonLogout" onclick="window.location.href = '/logout';">Logout</button>
+</body>
+</html>
