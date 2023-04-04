@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Человек</title>
+</head>
+<body>
+<p th:text="${user.username}">username</p>
+<p th:text="${user.userId}">Id</p>
+<p th:text="${user.email}">email</p>
+<p th:text="${user.age}">Age</p>
+<br/>
+<button class="buttonLogout" onclick="window.location.href = '/logout';">Logout</button>
+</body>
+</html>

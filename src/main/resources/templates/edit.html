@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Изменение</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{${user.userId}}" th:object="${user}">
+  <label for="username">username</label>
+  <input type="text" th:field="*{username}" id="username" >
+  <br/>
+  <label for="password">password</label>
+  <input type="text" th:field="*{password}" id="password" >
+  <br/>
+  <label for="age">age</label>
+  <input type="text" min="0" max="127" th:field="*{age}" id="age">
+  <br/>
+  <label for="email"> email</label>
+  <input type="text" th:field="*{email}" id="email" >
+  <br/>
+  <br/>
+  <label>Roles:
+    <select size="2" multiple name="role" required="required">
+      <option value="2">USER</option>
+      <option value="1">ADMIN</option>
+    </select>
+  </label>
+  <input type="submit" value="Update!"/>
+
+</form>
+<br/>
+<button class="buttonLogout" onclick="window.location.href = '/logout';">Logout</button>
+</body>
+</html>
