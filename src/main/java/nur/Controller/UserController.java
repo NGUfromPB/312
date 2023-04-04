@@ -26,8 +26,4 @@ public class UserController {
         model.addAttribute("user", user);
         return "userPage";
     }
-    @RequestMapping(value={"/login"}, method = RequestMethod.GET)
-    public String loginPage() {
-        return "login";
-    }
 }
