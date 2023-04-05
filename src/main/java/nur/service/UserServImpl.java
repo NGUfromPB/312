@@ -18,12 +18,10 @@ import java.util.stream.Collectors;
 @Service
 public class UserServImpl implements UserServ{
     private final UserDao userDao;
-    private final RoleDao roleDao;
     private final PasswordEncoder passwordEncoder;
     @Autowired
-    public UserServImpl (UserDao userDao, RoleDao roleDao,PasswordEncoder  passwordEncoder) {
+    public UserServImpl (UserDao userDao,PasswordEncoder  passwordEncoder) {
         this.userDao=userDao;
-        this.roleDao=roleDao;
         this.passwordEncoder=passwordEncoder;
     }
     @Override
@@ -65,8 +63,4 @@ public class UserServImpl implements UserServ{
         return userDao.findByUsername(username);
     }
 
-    private Collection<? extends GrantedAuthority> ath(Collection<Role> roles) {
-        return roles.stream().map(r -> new SimpleGrantedAuthority(r.getName()))
-                .collect(Collectors.toList());
-    }
 }
