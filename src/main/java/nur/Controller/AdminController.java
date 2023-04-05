@@ -16,7 +16,7 @@ public class AdminController {
     private final UserServ userServ;
     private final RoleServ roleServ;
 
-    @Autowired()
+    @Autowired
     public AdminController(UserServ userServ, RoleServ roleServ) {
         this.roleServ=roleServ;
         this.userServ = userServ;
