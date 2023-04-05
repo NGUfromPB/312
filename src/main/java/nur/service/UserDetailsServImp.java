@@ -27,14 +27,6 @@ public class UserDetailsServImp implements UserDetailsService {
         if(user == null){
             throw new UsernameNotFoundException("user not found");
         }
-
-
-//        Set<String> b=null;
-//
-//
-//        for (Role a: user.getRoles()) {
-//            b.add(a.getName());
-//        }
         UserDetails user1 = new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),user.getAuthorities());
         return user1;
     }
