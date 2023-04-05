@@ -13,13 +13,12 @@ import java.util.Set;
 
 @Component
 public class Userinit {
-
-    @Autowired
-    private RoleServImp roleService;
+    private RoleServImp roleServ;
     private UserServImpl userService;
 
-    public Userinit(UserServImpl userService) {
+    public Userinit(UserServImpl userService,RoleServImp roleServ) {
         this.userService = userService;
+        this.roleServ=roleServ;
     }
 
     @PostConstruct
@@ -27,8 +26,8 @@ public class Userinit {
         Role role1 = new Role("ADMIN");
         Role role2 = new Role("USER");
 
-        roleService.addRole(role1);
-        roleService.addRole(role2);
+        roleServ.addRole(role1);
+        roleServ.addRole(role2);
 
         Set<Role> roleAdmin = new HashSet<>();
         Set<Role> roleUser = new HashSet<>();
